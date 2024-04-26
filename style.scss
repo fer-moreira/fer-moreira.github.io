@@ -3,11 +3,13 @@ $foreground: #101010;
 $text-color: #FEFEFE;
 $text-selected: #ffb81f;
 $text-sub: #818181;
+$mobile-breakpoint: 768px;
 
 body {
     padding: 0;
     margin: 0;
     background-color: $background;
+    scroll-behavior: smooth;
 }
 
 * {
@@ -63,7 +65,7 @@ body {
             display: flex;
             flex-direction: row;
             gap: 24px;
-            height: 56px;
+            min-height: 56px;
             text-decoration: none;
             padding: 30px 10px;
             background-color: $background;
@@ -121,6 +123,20 @@ body {
         p {
             font-size: 16px;
             color: $text-sub;
+        }
+    }
+}
+
+@media (max-width: $mobile-breakpoint) {
+    .content {
+        margin-top: 24px;
+        padding: 24px;
+        max-width: none;
+    }
+
+    .generic-list {
+        &__element {
+            
         }
     }
 }
